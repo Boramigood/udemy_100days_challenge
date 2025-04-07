@@ -1,0 +1,78 @@
+<!--
+<margin겹침현상>
+block요소가 수직으로 겹칠때, 큰 margin이 우세
+block요소간 거리가 너무 크지 않도록 조절하기 위해
+
+<box-shadow>
+x축,y축(음수가능)   흐림(클수록 흐릿함)      그림자크기(클수록커짐)     rgb값(0,0,0,불투명도)
+
+
+
+
+
+<과제: 웹사이트 따라하기>
+날짜는 span태그로 강조
+img를 border 가운데 배치하려면, 음수margin 이용하기(요소간의 거리가 붙어있기보다 적어야함)
+
+1.html파일 만들기
+글씨만 따라해보자
+
+2.css따라하기
+css파일 만들고 연결하기
+배경색
+
+3.어찌저찌 완료
+
+
+
+
+
+<과제 피드백>
+non-semantic inline,block인 span,div 기억하기
+
+인라인 요소에는 수직margin 불가능 = 인라인은 옆에 생기는 것 그 자체라서, 수직개념 모름
+인라인 요소에는 대체 인라인 요소(이미지), 비대체 인라인 요소(a태그)
+대체 인라인 요소에는 수직margin 가능
+
+weight,height는 padding안의 content자체에 대한 너비임!
+고로 weight,height를 먼저 만지는게 좋음, 중앙정렬은 margin:auto시 해결!(12시부터 시계방향)
+이미지를 정확히 중간에 위치시킬때, 맞닿은 곳에서 height+(border*2)/2
+맏닿은 곳은 같은 main안에 두고, 	//////////테두리에 딱 맞추는 법? 중앙에 놓는 법?
+https://velog.io/@apdlvmf486/%EC%9D%8C%EC%88%98-%EC%97%AC%EB%B0%B1-%EC%82%AC%EC%9A%A9
+
+main의 좌우margin을 auto로 해놓고, main부모인 body의 margin설정으로 F12시 뭉게지는거 해결
+
+
+
+
+
+<새로운 과제: Violet>
+중앙정렬을 우선 text-align: center로 해놓음
+h1 margin-top만 옮겨도, 모든 요소가 box model이라 다 아래로 가게 됨
+
+
+
+
+
+<과제 피드백>
+img는 콘텐츠가 아닌, 속성만 지정할 수 있는 void 요소임(근데 src,alt 자동추가되어서 ㄱㅊ)
+text-align은, 요소의 '컨텐츠를' 중앙정렬함, 텍스트나 텍스트로 취급되는, 인라인 요소를 정렬함
+img에 width만 설정시에도, height자동설정됨(비율유지)
+
+header에 margin써도 되는데, padding 씀
+header아래에 h1에 기본margin있는데(브라우저가 설정한 34.84)
+header에 margin쓰면 h1 기본margin과 합산되어, margin-colapse로 원하는 간격설정 불가
+
+main 자체를 중앙정렬하면서, main 내부 컨텐츠는 좌측정렬
+>나는 main의 margin 수동조절함, main,부모body에 center해도 main이 인라인 요소가 아니라 적용안됨
+>>ㅇㅇ얘네도 margin이용함
+
+좌측의 노란박스는 5px border였음
+모든 텍스트의 동일한 들여쓰기 위해, transparent(투명색)으로 border주기
+class 지정자만 border 재할당하기
+
+a링크에 background-color 설정하고, padding주는 방법도 좋음
+herf말고 target은 기본이_self(그 창에서 열리기), _blank시 새창
+
+main같은 요소 안에서도 section으로 나눠줄 수 있음
+-->
