@@ -1,0 +1,73 @@
+<!--
+<commit>
+commit = 특정 시점의 데이터를, 복사하여 저장
+git 활용을 위해, prompt(terminal) 사용해야하는데, vscode에 내장되어있음
+
+이제 test.txt를 git으로 관리할거임		//보기 > 터미널
+git init = 깃 리포지터리,프로젝트 초기화
+git status = 깃 프로젝트 정보확인
+git add = git에게 어떤 파일을, 어떤 파일변경사항을 추적하게 할건지 알려주기
+그러면 스테이징 구역에 들어감, 워킹디렉토리(vscode)와 commit사이의 공간
+commit의 예비단계라고 봐도 됨, untracked file => changes to be committed
+git commit -m "내가 쓴 메세지" = 메세지를 추가할 수 있음
+후에 git status 입력시 commit할게 없다는 말이 나옴, commit이 정상적으로 완료된 것을 알 수 있음
+git log = add한 것 확인가능, 내가 쓴 message도 보임
+
+git config --global --edit = git 설정 파일을 열어서 직접 편집
+:x = 다시 터미널로
+git config --global user.name
+git config --global user.email = 그 항목만 편집
+
+Untracked files = 아예 commit 된 적 없는 것
+Changes not staged for commit = 한 번 commit된게 업뎃되지 않음
+
+여기서 기존 test.txt에 내용을 추가하고, 새로운 파일인 second-commit.txt도 만듦
+다음 commit에 둘 다 추가하고 싶음, 두 가지 방법이 있음
+1. git add test.txt second-commit.txt	//연달아쓰기(잘안씀)
+2. git add .	//untracked file, changes to be committed 모두 스테이징 구역에 넣는 만능키★
+스테이징 구역에 있는걸 commit하는 방법은? git commit -m "내가 쓴 메세지"
+
+
+
+
+
+<branch>
+리포지터리 초기화시, commit들은 branch의 일부로 흡수됨
+
+내가 새로운 기능을 탑재하고 싶으면, 그 기능수행이 가능한 브랜치를 새로 만들면 됨
+그리고 그 브랜치를, 마스터 브랜치에 추가하면 됨
+그러면 깃의 메인기능인, 빠꾸치기가 가능
+
+git branch = 모든 branch 상태를 보여줌
+git branch -m main = main으로 branch이름을 바꿈
+
+git checkout "branch이름"= branch 이동하기
+git checkout -b feature = 단순히 새로운 "feature"라는 branch 만들기
+
+터미널에서 나가려면 q누르기
+
+"feature" branch에서 작업해서 거기에 작업물이 있음
+그걸 "main" branch에 추가하려면, 두 branch를 합쳐야 함
+=>"main" branch에서 git merge feature
+
+
+Git이 merge할 때 충돌(conflict)
+"동일한 파일의 같은 줄을 서로 다른 브랜치에서 각기 다르게 수정한 상태로, 그 둘을 merge하려고 하면 어떻게 될까?"
+>어떤게 맞는지 선택하기
+
+
+
+<111강>
+우리가 지금까지 한거? git에 데이터 추가하기
+
+commit을 한 상태라서 모두 추적됨
+삭제하기 위해선 두가지 방법이 있음
+1. 파일을 우클릭해서 휴지통으로 이동시키기	//스테이징되지 않음
+2. cd deleting-data입력으로 올바른 경로로 이동, 후에 git rm file2.txt	//자동 스테이징됨
+
+가장 최근상태로 돌아가고 싶음 > 최근 커밋 삭제(deleted file2 and file3를 삭제 = 복구)
+git reset = 가장최근commit(HEAD)을 reset함
+
+
+111. 6:57까지, git일시정지(더 못하겠음)
+-->
