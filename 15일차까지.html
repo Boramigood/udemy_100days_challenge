@@ -1,0 +1,28 @@
+<!--
+배경이미지
+플박, 그리드 (레이아웃 생성)
+단위
+
+a는 인라인 > 블록 만들고 싶으니까, div안에 넣기
+nav는 블록
+
+근데 이걸? 옆에다 나열하고 싶어서 flexbox 활용
+옆에다 냅두고 싶은 얘들의 부모에 display:flexbox하고, flex-direction: row,column하면 됨
+요소가 정렬된 축은 주축, 반대축은 교차축
+
+1.
+flex-direction: row시 주축의 시작점은 왼쪽위
+flex-direction: row-reverse시 주축의 시작점은 오른쪽위
+
+2.
+flex-wrap:wrap시 width 없애면, 창 크기가 줄어들면 거기에 맞춰 줄어듦
+
+3.
+flex-flow는 1,2를 합친거임
+flex-flow: row nowrap 이런식으로
+
+
+
+align-items: center 주축의 중심으로 컨텐츠 정렬
+justify-content: space-between 남는 공간을 가운데로 빼주기
+-->
