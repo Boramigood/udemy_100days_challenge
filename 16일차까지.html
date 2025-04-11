@@ -1,0 +1,37 @@
+<!--
+부모의 css가 display:flex여야 함
+그리고 justift-content: flex-end는 text-align: right하면 됨
+
+<중간단계까지 스스로 만들어보기>
+구역이 나눠있으면 좋을 것 같다 > ㅇㅇ
+왜 header에서 div,nav로 나눠놓았나? > 둘의 속성이 다르니까, 다 div해도 되는데, nav각 나와서 한거
+div,nav같은 블록요소들이 가로로 진열되었으면 한다 > 부모인 header에서 display:flex
+간격이 띄어졌으면 좋겠다 > justify-content: space-between;
+
+
+박스 내부 컨텐츠 정렬은 text-align:center, 박스크기는 padding으로 키우고, 박스 위치는 margin: auto이용
+
+<중간에 잠깐 포지셔닝 이해하기>
+'문서 흐름'이라는 것은 HTML에서 사전 정의된 요소의 순서
+position: static은 요소를 기본문서흐름에 유지시켜, 상하좌우의 위치를 못바꾸는 것
+position: relative는 이동시킬 수 있는거
+position: absolute는 understand-position문서에서 1,3만 위치하고, 2는 문서흐름에서 완전 빠짐
+
+일반적으로 요소에 {position: absolute}를 추가하면
+문서 흐름에서 빠져나와서
+{position: relative}가 적용된 첫 번째 선조에
+상대적이 되는 겁니다
+아무것도 {position: relative}가 아니면, HTML요소까지 올라감(이건 HTML에 margin했을 때만)
+일단 body까지 올라간다는걸 알 수 있음
+
+position: fixed하면, 쿠팡 팝업창마냥 따라내려옴
+
+absolute는 HTML 요소에 상대적임
+fixed는 뷰포트에 상대적	(뷰포트는 우리가 볼 수 있는 웹페이지의 현재 위치)
+
+
+
+
+
+
+-->
