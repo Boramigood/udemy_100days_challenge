@@ -1,0 +1,158 @@
+<!--
+배경이미지
+플박, 그리드 (레이아웃 생성)
+단위
+
+a는 인라인 > 블록 만들고 싶으니까, div안에 넣기
+nav는 블록
+
+근데 이걸? 옆에다 나열하고 싶어서 flexbox 활용
+옆에다 냅두고 싶은 얘들의 부모에 display:flexbox하고, flex-direction: row,column하면 됨
+요소가 정렬된 축은 주축, 반대축은 교차축
+
+1.
+flex-direction: row시 주축의 시작점은 왼쪽위
+flex-direction: row-reverse시 주축의 시작점은 오른쪽위
+
+2.
+flex-wrap:wrap시 width 없애면, 창 크기가 줄어들면 거기에 맞춰 줄어듦
+
+3.
+flex-flow는 1,2를 합친거임
+flex-flow: row nowrap 이런식으로
+
+
+
+align-items: center 주축의 중심으로 컨텐츠 정렬
+justify-content: space-between 남는 공간을 가운데로 빼주기
+
+
+
+
+
+
+부모의 css가 display:flex여야 함
+그리고 justift-content: flex-end는 text-align: right하면 됨
+
+<중간단계까지 스스로 만들어보기>
+구역이 나눠있으면 좋을 것 같다 > ㅇㅇ
+왜 header에서 div,nav로 나눠놓았나? > 둘의 속성이 다르니까, 다 div해도 되는데, nav각 나와서 한거
+div,nav같은 블록요소들이 가로로 진열되었으면 한다 > 부모인 header에서 display:flex
+간격이 띄어졌으면 좋겠다 > justify-content: space-between;
+
+
+박스 내부 컨텐츠 정렬은 text-align:center, 박스크기는 padding으로 키우고, 박스 위치는 margin: auto이용
+
+<중간에 잠깐 포지셔닝 이해하기>
+'문서 흐름'이라는 것은 HTML에서 사전 정의된 요소의 순서
+position: static은 요소를 기본문서흐름에 유지시켜, 상하좌우의 위치를 못바꾸는 것
+position: relative는 이동시킬 수 있는거
+position: absolute는 understand-position문서에서 1,3만 위치하고, 2는 문서흐름에서 완전 빠짐
+
+일반적으로 요소에 {position: absolute}를 추가하면
+문서 흐름에서 빠져나와서
+{position: relative}가 적용된 첫 번째 선조에
+상대적이 되는 겁니다
+아무것도 {position: relative}가 아니면, HTML요소까지 올라감(이건 HTML에 margin했을 때만)
+일단 body까지 올라간다는걸 알 수 있음
+
+position: fixed하면, 쿠팡 팝업창마냥 따라내려옴
+
+absolute는 HTML 요소에 상대적임
+fixed는 뷰포트에 상대적	(뷰포트는 우리가 볼 수 있는 웹페이지의 현재 위치)
+
+
+
+
+
+
+
+퍼센테이지 값은 부모요소에 상대적임
+width: 100%는, html요소의 100%라는 이야기
+
+
+
+box-sizing: content-box   =>   padding과 border는 너비와 높이에 포함되지 않고 따로 더해집니다.
+실무 box-sizing: border-box를 더 많이 씁니다. 계산이 단순하고 레이아웃 잡기 편하거든요.
+
+
+
+결론: 문서에 어떤걸 적용해야하냐?
+position: absolute; => 뒤로감
+width: 100%; => Destinations, About이 우측으로 감
+box-sizing: border-box; => 화면짤림 방지		//실전에서 막히면 top: 0, left: 0 쓰셈
+
+width: 100%쓰면 부모요소랑 같아짐
+블록요소 중앙정렬은 margin: auto
+
+원본파일의 해상도가 달라서 img 너비가 달라진다
+px말고 %쓰면 창 늘릴 때 같이 늘어난다
+
+object-fit
+기본값 fill = 주어진 치수에 맞게 조절, 이미지들이 늘어질 수 있음
+contain = 포함하게 만듦
+cover = 그저 갓
+
+마진없는 부모에 마진있는 자식은, 마진겹침현상으로 자식마진을 부모에 적용하게 됨
+=> 부모에 그만큼의 패딩을 더해주면 됨
+
+
+
+
+background-color: rgb(227, 255, 253)는
+linear-gradient(45deg, rgb(227, 255, 253), rgb(202, 243, 240))와 같다
+
+li안에 img가 있으니까, li의 width,height를 80px로 하고, img의 width,height를 100%로 하기
+
+
+🔧 justify-content: Flex 컨테이너 안의 자식 요소 위치를 조정
+
+✍️ text-align: 텍스트나 인라인 요소의 정렬 방향을 지정
+
+
+
+
+
+
+카드스타일 만드는 법
+
+overflow속성 이용시, 넘친부분 케어가능(애매하게 넘쳐도)
+
+overflow: visable이 기본값
+overflow: hidden으로 해주기
+
+엇갈리게 만들려고
+ul은 넓게, li는 좁게
+
+flex-wrap: wrap
+
+그리드: 열과 행을 다룰 때 좋음
+컨테이너 만들기
+grid-template-columns: 열 나눌 때는 2fr, 1fr같이 fr단위를 씀
+
+li:nth-of-type(num) { ... }
+"같은 부모 안에 있는 여러 요소 중에서, 그 타입이 li인 것들 중 num번째"
+{grid-column} 속성은 요소가 몇개의 열을 차지하는지 명령하는 것
+
+grid-column: 1 / 3 =
+grid-column: 1 / span 2	3번째 열이, 2번째 span에서 끝나니까
+
+
+이번 모듈 목표: 상세한 color이나 margin값 몰라도 만들 수 있기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
